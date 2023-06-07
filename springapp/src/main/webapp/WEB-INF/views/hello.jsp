@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/views/include.jsp" %>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +8,6 @@
 </head>
 <body>
 	  <h1>Hello - Spring Application</h1>
-      <p>Greetings.</p>
+      <p>Greetings, it is now <c:out value="${now}"/></p>
 </body>
 </html>

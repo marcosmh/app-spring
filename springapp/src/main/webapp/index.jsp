@@ -1,6 +1,5 @@
-<html>
-  <head><title>Spring Application 4.3.30</title></head>
-  <body>
-    <h1>Spring Application 4.3.30</h1>
-  </body>
-</html>
+<%@ include file="/WEB-INF/views/include.jsp" %>
+
+
+<%-- Redirected because we can't set the welcome page to a virtual URL. --%>
+<c:redirect url="/hello.htm"/>
