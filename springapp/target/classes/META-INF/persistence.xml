@@ -7,9 +7,11 @@
 	
 	<persistence-unit name="springappPU" transaction-type="RESOURCE_LOCAL">
 	
-	 <!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+	 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	 
-	 <class>com.std.springapp.domain</class>
+	 <class>com.std.springapp.domain.Product</class>
+	 
+	 <exclude-unlisted-classes>true</exclude-unlisted-classes>
 	 		 
 	 <properties>
 		 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />

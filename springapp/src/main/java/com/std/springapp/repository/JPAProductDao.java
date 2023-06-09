@@ -1,12 +1,9 @@
 package com.std.springapp.repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,12 +23,11 @@ public class JPAProductDao implements ProductDao {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Product> getProductList() {
-		
-				
+						
 		return em.createQuery("select p from Product p order by p.id",Product.class).getResultList();			
-		//return em.createNativeQuery("select p.* from products p order by p.id",Product.class).getResultList();
-		
-		
+		//return em.createNativeQuery("select p.* from products p order by p.id",Product.class)
+		//     	   .getResultList();
+				
 	}
 
 	@Override
