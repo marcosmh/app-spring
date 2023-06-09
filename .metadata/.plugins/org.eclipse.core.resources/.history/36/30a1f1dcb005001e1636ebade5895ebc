@@ -1,0 +1,11 @@
+package com.std.springapp.domain;
+
+import java.io.Serializable;
+
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = -8692554797400936588L;
+	
+	
+
+}

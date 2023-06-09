@@ -1,0 +1,22 @@
+package com.std.springapp.repository;
+
+import java.util.List;
+
+import com.std.springapp.domain.Product;
+
+@Repository(value = "productDao")
+public class JPAProductDao implements ProductDao {
+
+	@Override
+	public List<Product> getProductList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveProduct(Product prod) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

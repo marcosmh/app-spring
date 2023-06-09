@@ -1,0 +1,34 @@
+package com.std.springapp.repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import com.std.springapp.domain.Product;
+
+@Repository(value = "productDao")
+public class JPAProductDao implements ProductDao {
+	
+	private EntityManager em = null;
+	
+	@PersistenceContext
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
+
+	@Override
+	public List<Product> getProductList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveProduct(Product prod) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

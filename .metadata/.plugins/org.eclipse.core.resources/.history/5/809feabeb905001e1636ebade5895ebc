@@ -1,0 +1,11 @@
+package com.std.springapp.repository;
+
+import java.util.List;
+
+public class ProductDao {
+
+	public List<Product> getProductList();
+
+    public void saveProduct(Product prod);
+    
+}

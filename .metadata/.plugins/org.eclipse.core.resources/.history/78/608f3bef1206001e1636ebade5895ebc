@@ -1,0 +1,50 @@
+package com.std.springapp.repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.std.springapp.domain.Product;
+
+@Repository(value = "productDao")
+public class JPAProductDao implements ProductDao {
+	
+	private EntityManager em = null;
+	
+	@PersistenceContext
+    public void setEntityManager(EntityManager em) {
+        this.em = em;
+    }
+
+	@Override
+	@Transactional(readOnly = true)
+	@SuppressWarnings("unchecked")	
+	public List<Product> getProductList() {
+		
+		/*
+		try {
+			return em.createQuery("select p from Product p order by p.id").getResultList();
+		} catch(Exception e) {
+			System.out.println("Error: ========> ");
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());
+			System.out.println(e.getStackTrace());
+			return null;
+		}*/
+		
+		return em.createQuery("select p from Product p order by p.id").getResultList();
+		 
+	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public void saveProduct(Product prod) {
+		em.merge(prod);
+		
+	}
+
+}

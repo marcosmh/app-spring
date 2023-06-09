@@ -1,0 +1,10 @@
+package com.std.springapp.service;
+
+public interface ProductManager {
+	
+	 public void increasePrice(int percentage);
+	    
+	 public List<Product> getProducts();
+
+
+}

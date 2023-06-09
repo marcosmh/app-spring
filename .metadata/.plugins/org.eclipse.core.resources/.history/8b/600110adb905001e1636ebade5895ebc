@@ -1,0 +1,8 @@
+package com.std.springapp.repository;
+
+public class ProductDao {
+
+	public List<Product> getProductList();
+
+    public void saveProduct(Product prod);
+}
