@@ -1,0 +1,139 @@
+package com.std.springapp.librerias.guava;
+
+import java.util.List;
+import java.util.Map;
+
+import com.google.common.base.Functions;
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+import com.google.common.base.Splitter;
+import com.google.common.collect.FluentIterable;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+
+
+class Car {
+	private int id; 
+	private String name; 
+	private int price;
+	
+	public Car(int id, String name, int price) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	
+}
+
+
+
+public class GuavaLib {
+
+	
+	public static void initializeCollectionEx() {
+		System.out.println("InitializeCollectionEx...");
+		
+		 Map<String, Integer> items = ImmutableMap.of("coin", 3, "glass", 4, "pencil", 1);
+
+	        items.entrySet()
+	                .stream()
+	                .forEach(System.out::println);
+	        
+	        List<String> fruits = Lists.newArrayList("orange", "banana", "kiwi", 
+	                "mandarin", "date", "quince");
+	        
+	        for (String fruit: fruits) {
+	            System.out.println(fruit);
+	        }
+	        
+	        System.out.println("==================================");
+	}
+	
+		
+	public static void fluentIterableEx() {
+		System.out.println("FluentIterableEx...");
+		
+		List<Car> cars = Lists.newArrayList(
+				new Car(1, "Audi", 52642),
+	            new Car(2, "Mercedes", 57127), new Car(3, "Skoda", 9000),
+	            new Car(4, "Volvo", 29000) );
+
+	        Predicate<Car> byPrice = car -> car.getPrice() <= 30000;
+
+	        List<String> results = FluentIterable.from(cars)
+	                .filter(byPrice)
+	                .transform(Functions.toStringFunction())
+	                .toList();
+	        
+	       System.out.println( results );
+	       			
+		System.out.println("==================================");
+	}
+	
+	public static void predicateEx() {
+		
+		System.out.println("predicateEx...");
+		
+		 List<Integer> values = Lists.newArrayList(3, null, 4, 7, 
+	                8, null, 7);
+	        
+	        Iterable<Integer> filtered = Iterables.filter(values, 
+	                Predicates.notNull());
+	        
+	        for (Integer i: filtered) {
+	            System.out.println(i);
+	        }
+	        
+	    System.out.println("==================================");
+	}
+	
+	public static void stringSplitterEx () {
+		System.out.println("stringSplitterEx...");
+		
+		String input = "There is a dog in the garden.";
+	        
+	        List<String> words = Splitter.on(" ").splitToList(input);
+	        
+	        for (String word: words) {
+	            System.out.println(word);
+	        }
+	        
+	   System.out.println("==================================");
+	}
+	
+	public static void main(String[] args) {
+		
+		initializeCollectionEx();
+		fluentIterableEx();
+		predicateEx();
+		stringSplitterEx();
+	}
+}
+
+
