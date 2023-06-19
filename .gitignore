@@ -24,6 +24,8 @@ hs_err_pid*
 replay_pid*
 
 /.metadata/
+.metadata
+/metadata
 
 # Build and Release Folders
 bin-debug/
