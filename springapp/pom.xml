@@ -717,13 +717,15 @@
 			<version>1.2</version>
 		</dependency>
 		
-		<!-- falta configuracion
+		<!-- falta configuracion -->
+		<!--
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
 			<version>2.8.1</version>
 		</dependency>
 		-->
+		
 		
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -741,10 +743,10 @@
 		
 		<!-- ********FIN******************************************************************** -->
 		
-		
-		
-		
+				
 	</dependencies>
+	
+	
 
 	<build>
 		<finalName>springapp</finalName>
